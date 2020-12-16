@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import perifaDelivery.PerifaBuy.model.CategoriaProdutoModel;
+import perifaDelivery.PerifaBuy.model.CategoriaProduto;
 import perifaDelivery.PerifaBuy.repository.CategoriaProdutoRepository;
 
 @RestController
@@ -30,7 +30,7 @@ public class CategoriaProdutoController implements WebMvcConfigurer {
 	//posts inserir-----------------------------------------------------------------------------------
 		
 	@PostMapping("/post")
-	public ResponseEntity<CategoriaProdutoModel> post(@RequestBody CategoriaProdutoModel objeto)
+	public ResponseEntity<CategoriaProduto> post(@RequestBody CategoriaProduto objeto)
 	{
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(objeto));
 	}
@@ -38,20 +38,20 @@ public class CategoriaProdutoController implements WebMvcConfigurer {
 	//get all select * from-----------------------------------------------------------------------------------
 	
 	@GetMapping("/getAll")
-	public ResponseEntity<List<CategoriaProdutoModel>> GetAll()
+	public ResponseEntity<List<CategoriaProduto>> GetAll()
 	{
 		return ResponseEntity.ok(repository.findAll());
 	}
 	//Updates-----------------------------------------------------------------------------------
 	@PutMapping("put")
-	public ResponseEntity<CategoriaProdutoModel> put (@RequestBody CategoriaProdutoModel nome)
+	public ResponseEntity<CategoriaProduto> put (@RequestBody CategoriaProduto nome)
 	{
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(nome));
 	}
 	
 	//getbyid select where id-------------------------------------------------------------------------
 	@GetMapping("/getById/{id}")
-	public ResponseEntity<CategoriaProdutoModel> GetById(@PathVariable Integer id)
+	public ResponseEntity<CategoriaProduto> GetById(@PathVariable Integer id)
 	{
 		return repository.findById(id)
 				.map(resp -> ResponseEntity.ok(resp))
@@ -59,7 +59,7 @@ public class CategoriaProdutoController implements WebMvcConfigurer {
 	}
 
 	@GetMapping("/nome/{nome}")
-	public ResponseEntity<List<CategoriaProdutoModel>> getByName(@PathVariable String nome){
+	public ResponseEntity<List<CategoriaProduto>> getByName(@PathVariable String nome){
 		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome));
 	}	
 	//delete --------------------------------------------------------------------------

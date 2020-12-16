@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name="tb_categoriaProduto")
-public class CategoriaProdutoModel {
+public class CategoriaProduto {
 	
 	@Id
 	@Column
