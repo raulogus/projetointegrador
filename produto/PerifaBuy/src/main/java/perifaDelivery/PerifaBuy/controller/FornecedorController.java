@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import perifaDelivery.PerifaBuy.model.CategoriaProdutoModel;
+import perifaDelivery.PerifaBuy.model.CategoriaProduto;
 import perifaDelivery.PerifaBuy.model.Fornecedor;
 import perifaDelivery.PerifaBuy.repository.FornecedorRepository;
 

@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -24,7 +26,6 @@ public class Produto {
 	private float precoUnitario;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id_categoria_produto; // ver como deixar??
 	
 	@NotNull
