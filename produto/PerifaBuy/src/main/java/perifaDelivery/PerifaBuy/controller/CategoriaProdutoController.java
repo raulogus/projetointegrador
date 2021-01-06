@@ -59,7 +59,7 @@ public class CategoriaProdutoController implements WebMvcConfigurer {
 	}
 
 	@GetMapping("/nome/{nome}")
-	public ResponseEntity<List<CategoriaProduto>> getByName(@PathVariable String nome){
+	public ResponseEntity<Object> getByName(@PathVariable String nome){
 		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome));
 	}	
 	//delete --------------------------------------------------------------------------

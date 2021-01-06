@@ -7,5 +7,7 @@ import perifaDelivery.PerifaBuy.model.CategoriaProduto;
 
 @Repository
 public interface CategoriaProdutoRepository extends JpaRepository<CategoriaProduto, Integer> {
+
+	Object findAllByNomeContainingIgnoreCase(String nome);
 	
 }
