@@ -41,6 +41,17 @@ public class Usuario {
 	@NotNull
 	@Size(min = 8, max = 25)
 	private String password;
+	
+	@Column
+	private String localizacao;
+
+	public String getLocalizacao() {
+		return localizacao;
+	}
+
+	public void setLocalizacao(String localizacao) {
+		this.localizacao = localizacao;
+	}
 
 	public int getId() {
 		return id;
