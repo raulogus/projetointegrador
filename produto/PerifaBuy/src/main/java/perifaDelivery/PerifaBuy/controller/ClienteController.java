@@ -50,7 +50,6 @@ public class ClienteController {
 	}
 	
 	
-	// arrumar put, não funcionando ainda
 	@PutMapping("/atualizar")
 	public ResponseEntity<Cliente> put(@RequestBody Cliente cliente) {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(cliente));
