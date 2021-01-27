@@ -1,7 +1,8 @@
 package perifaDelivery.PerifaBuy.model;
 
 public class UserLogin {
-private String nome;
+	
+	private String nome;
 	
 	private String usuario;
 	
